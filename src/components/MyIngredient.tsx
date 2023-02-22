@@ -9,6 +9,29 @@ const MyIngredient = () => {
     setIngredientList(ingredientList?.concat(ingredient));
     setIngredient('');
   };
+
+  const handleSearch = async(e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault()
+    try {
+      const response = await fetch("/api/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ingredient: `${ingredientList[0]}, 돼지고기` }),
+      });
+
+      const data = await response.json();
+      if (response.status !== 200) {
+        throw data.error || new Error(`Request failed with status ${response.status}`);
+      }
+
+      console.log(data.result)
+    } catch(error) {
+      console.error(error);
+    }
+  }
+
   return (
     <div className="flex flex-col items-center">
       <h1 className="py-4 text-2xl font-bold text-gray">마이 냉장고</h1>
@@ -30,6 +53,7 @@ const MyIngredient = () => {
           </li>
         ))}
       </ul>
+      <button onClick={handleSearch}>검색하기</button>
     </div>
   );
 };
