@@ -1,31 +1,19 @@
-import { useSelector } from 'react-redux';
-import { RootState } from '@/store/ingredientStore';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { AxiosResponse } from 'axios';
+import type { RootState } from '@/store/ingredientStore';
+import { searchRequest } from '@/pages/api';
 
 const SearchRecipe = () => {
   const selectList = useSelector((state: RootState) => state.ingredientList.selectList);
-  const [response, setResponse] = useState();
+  const [response, setResponse] = useState<AxiosResponse | null>(null);
 
   const handleSearch = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    try {
-      const response = await fetch('/api/generate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ingredient: selectList.join(',') }),
-      });
 
-      const data = await response.json();
-      if (response.status !== 200) {
-        throw data.error || new Error(`Request failed with status ${response.status}`);
-      }
+    if (selectList.length === 0) alert('재료를 선택해주세요!');
 
-      setResponse(data.result);
-    } catch (error) {
-      console.error(error);
-    }
+    setResponse(await searchRequest(selectList.join(',')));
   };
 
   return (
