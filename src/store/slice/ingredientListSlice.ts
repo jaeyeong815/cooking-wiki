@@ -17,11 +17,14 @@ export const ingredientListSlice = createSlice({
     addList: (state, action: PayloadAction<string>) => {
       state.ingredientList.push(action.payload);
     },
+    deleteListInItem: (state, action: PayloadAction<string>) => {
+      state.ingredientList = state.ingredientList.filter((ingredient) => ingredient !== action.payload);
+    },
     selectItem: (state, action: PayloadAction<string>) => {
       state.selectList.push(action.payload);
     },
   },
 });
 
-export const { addList, selectItem } = ingredientListSlice.actions;
+export const { addList, deleteListInItem, selectItem } = ingredientListSlice.actions;
 export default ingredientListSlice.reducer;
