@@ -1,5 +1,6 @@
 import AddIngredient from '@/components/MyRefrigerator/AddIngredient';
 import IngredientList from '@/components/MyRefrigerator/IngredientList';
+import SearchRecipe from '@/components/MyRefrigerator/SearchRecipe';
 import SelectIngredientList from '@/components/MyRefrigerator/SelectIngredientList';
 
 const MyRefrigerator = () => {
@@ -9,6 +10,7 @@ const MyRefrigerator = () => {
       <AddIngredient />
       <IngredientList />
       <SelectIngredientList />
+      <SearchRecipe />
     </div>
   );
 };
