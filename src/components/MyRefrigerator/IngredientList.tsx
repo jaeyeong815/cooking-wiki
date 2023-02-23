@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '@/store/ingredientStore';
 
 const IngredientList = () => {
-  const ingredientList = useSelector((state: RootState) => state.ingredient.ingredientList);
+  const ingredientList = useSelector((state: RootState) => state.ingredientList.ingredientList);
 
   const handleSearch = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ const IngredientList = () => {
 
   return (
     <>
-      <ul className="m-8 w-52">
+      <ul className="m-8 w-60">
         {ingredientList.map((ingredient) => (
           <li key={ingredient}>
             <span className="inline-block w-40 p-0">{ingredient}</span>

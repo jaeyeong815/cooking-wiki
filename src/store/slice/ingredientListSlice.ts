@@ -8,7 +8,7 @@ const initialState: IngredientList = {
   ingredientList: [],
 };
 
-export const ingredientSlice = createSlice({
+export const ingredientListSlice = createSlice({
   name: 'ingredientList',
   initialState,
   reducers: {
@@ -18,5 +18,5 @@ export const ingredientSlice = createSlice({
   },
 });
 
-export const { addList } = ingredientSlice.actions;
-export default ingredientSlice.reducer;
+export const { addList } = ingredientListSlice.actions;
+export default ingredientListSlice.reducer;

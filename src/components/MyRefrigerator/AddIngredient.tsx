@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addList } from '@/store/slice/ingredientSlice';
+import { addList } from '@/store/slice/ingredientListSlice';
 
 const AddIngredient = () => {
   const [ingredient, setIngredient] = useState<string>('');
