@@ -1,8 +1,12 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from '@/store/ingredientStore';
+import { selectItem } from '@/store/slice/ingredientListSlice';
 
 const IngredientList = () => {
   const ingredientList = useSelector((state: RootState) => state.ingredientList.ingredientList);
+  const dispatch = useDispatch();
+
+  const handleSelect = (e: React.MouseEvent<HTMLElement>) => dispatch(selectItem(e.currentTarget.id));
 
   const handleSearch = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
@@ -32,6 +36,9 @@ const IngredientList = () => {
         {ingredientList.map((ingredient) => (
           <li key={ingredient}>
             <span className="inline-block w-40 p-0">{ingredient}</span>
+            <button id={ingredient} onClick={handleSelect}>
+              선택
+            </button>
             <button>삭제</button>
           </li>
         ))}
