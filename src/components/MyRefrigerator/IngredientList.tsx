@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import type { RootState } from '@/store/ingredientStore';
+import type { RootState } from '@/store';
 import { deleteListInItem, selectItem } from '@/store/slice/ingredientListSlice';
 
 const IngredientList = () => {
