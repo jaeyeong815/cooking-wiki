@@ -1,7 +1,7 @@
-import AddIngredient from '@/components/MyRefrigerator/AddIngredient';
-import IngredientList from '@/components/MyRefrigerator/IngredientList';
-import SearchRecipe from '@/components/MyRefrigerator/SearchRecipe';
-import SelectIngredientList from '@/components/MyRefrigerator/SelectIngredientList';
+import AddIngredient from '@/components/MyRefrigerator/Ingredient/AddIngredient';
+import IngredientList from '@/components/MyRefrigerator/Ingredient/IngredientList';
+import SelectedIngredientList from '@/components/MyRefrigerator/SelectedIngredient/SelectedList';
+import SearchRecipe from '@/components/MyRefrigerator/SelectedIngredient/SearchRecipe';
 
 const MyRefrigerator = () => {
   return (
@@ -9,7 +9,7 @@ const MyRefrigerator = () => {
       <h1 className="py-4 text-2xl font-bold text-gray">마이 냉장고</h1>
       <AddIngredient />
       <IngredientList />
-      <SelectIngredientList />
+      <SelectedIngredientList />
       <SearchRecipe />
     </div>
   );

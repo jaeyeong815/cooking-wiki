@@ -22,7 +22,9 @@ const SearchRecipe = () => {
       <button onClick={handleSearch}>검색하기</button>
       <p>결과</p>
       {recommandedFoodList.map((food) => (
-        <p key={food}>{food}</p>
+        <div key={food}>
+          <p>{food}</p>
+        </div>
       ))}
     </>
   );
