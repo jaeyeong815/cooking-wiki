@@ -1,3 +1,3 @@
-import instance from '@/pages/api/instance/instance';
+import instance from '@/pages/api/instance/axiosInstance';
 
-export const searchRequest = (selectList: string) => instance.post('/generate', { ingredient: selectList });
+export const searchRequest = (selectList: string) => instance.post('/food', { ingredient: selectList });
