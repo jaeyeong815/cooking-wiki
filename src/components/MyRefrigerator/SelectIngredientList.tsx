@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@/store/ingredientStore';
+import type { RootState } from '@/store/ingredientStore';
 import { deleteSelectListInItem } from '@/store/slice/ingredientListSlice';
 
 const SelectIngredientList = () => {
