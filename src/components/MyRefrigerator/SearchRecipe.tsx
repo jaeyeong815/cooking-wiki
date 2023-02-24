@@ -1,26 +1,29 @@
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { AxiosResponse } from 'axios';
-import type { RootState } from '@/store/ingredientStore';
+import { useDispatch, useSelector } from 'react-redux';
+import type { RootState } from '@/store';
 import { searchRequest } from '@/pages/api';
+import { addRecommendedFoodToList } from '@/store/slice/recommendSlice';
 
 const SearchRecipe = () => {
   const selectList = useSelector((state: RootState) => state.ingredientList.selectList);
-  const [response, setResponse] = useState<AxiosResponse | null>(null);
+  const recommandedFoodList = useSelector((state: RootState) => state.recommendList.recommendedFoodList);
+  const dispatch = useDispatch();
 
   const handleSearch = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
 
     if (selectList.length === 0) alert('재료를 선택해주세요!');
 
-    setResponse(await searchRequest(selectList.join(',')));
+    const response = await searchRequest(selectList.join(',')).then((res) => res.toString().trim());
+    dispatch(addRecommendedFoodToList(response.split('\n')));
   };
 
   return (
     <>
       <button onClick={handleSearch}>검색하기</button>
       <p>결과</p>
-      {response}
+      {recommandedFoodList.map((food) => (
+        <p key={food}>{food}</p>
+      ))}
     </>
   );
 };
