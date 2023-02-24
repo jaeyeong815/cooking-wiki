@@ -30,7 +30,7 @@ const question = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const completion = await openai.createCompletion({
       model: 'text-davinci-003',
-      prompt: `${ingredient}가 들어간 요리 레시피 5개 이름 알려줘`,
+      prompt: `${ingredient}가 사용되는 요리 레시피 5개 이름 알려줘`,
       temperature: 0.6,
       max_tokens: 1888,
       top_p: 1,
