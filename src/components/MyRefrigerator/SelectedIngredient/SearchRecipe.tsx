@@ -12,8 +12,8 @@ const SearchRecipe = () => {
 
     if (selectList.length === 0) alert('재료를 선택해주세요!');
 
-    const response = await searchRequest(selectList.join(',')).then((res) => res.toString().trim());
-    dispatch(addRecommendedFoodToList(response.split('\n')));
+    const foodList = await searchRequest(selectList.join(',')).then((res) => res.toString().trim());
+    dispatch(addRecommendedFoodToList(foodList.split('\n').map((food) => food.slice(3))));
   };
 
   return <button onClick={handleSearch}>검색하기</button>;
