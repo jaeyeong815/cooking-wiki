@@ -6,4 +6,13 @@
   .btn-primary {
     @apply rounded bg-yellow py-2 px-5 ml-5 text-black font-semibold hover:text-white;
   }
+  .btn-option {
+    @apply rounded bg-yellow py-1 px-3 ml-1 text-black text-sm hover:text-white;
+  }
+  .btn-option-del {
+    @apply rounded bg-lightRed py-2 px-3 ml-1 text-white text-sm hover:text-black;
+  }
+  .item-ingredient {
+    @apply w-40 py-2 rounded-md text-gray bg-lightRed/10 hover:underline hover:cursor-pointer decoration-wavy text-center;
+  }
 }
