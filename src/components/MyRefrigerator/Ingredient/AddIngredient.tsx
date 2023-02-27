@@ -15,8 +15,16 @@ const AddIngredient = () => {
 
   return (
     <form onSubmit={handleEnteredIngredient}>
-      <input type="text" placeholder="재료를 입력해주세요" value={ingredient} onChange={handleOnChange} />
-      <button type="submit">등록</button>
+      <input
+        className="w-80 placeholder:italic placeholder:text-slate-400 bg-white rounded py-2 px-9 shadow-md focus:outline-none focus:border-yellow focus:ring-yellow focus:ring-1"
+        type="text"
+        placeholder="냉장고에 있는 재료를 입력해주세요!"
+        value={ingredient}
+        onChange={handleOnChange}
+      />
+      <button className="btn-primary" type="submit">
+        등록
+      </button>
     </form>
   );
 };
