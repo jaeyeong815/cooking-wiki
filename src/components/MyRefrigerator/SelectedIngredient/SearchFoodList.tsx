@@ -5,7 +5,7 @@ import type { RootState } from '@/store';
 import { addRecommendedFoodToList } from '@/store/slice/recommendSlice';
 import SearchButton from '@/components/UI/SearchButton';
 
-const SearchRecipe = () => {
+const SearchFoodList = () => {
   const selectList = useSelector((state: RootState) => state.ingredientList.selectList);
   const dispatch = useDispatch();
   const router = useRouter();
@@ -27,4 +27,4 @@ const SearchRecipe = () => {
   );
 };
 
-export default SearchRecipe;
+export default SearchFoodList;
