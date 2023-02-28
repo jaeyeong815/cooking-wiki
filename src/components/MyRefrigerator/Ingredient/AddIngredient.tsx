@@ -9,6 +9,10 @@ const AddIngredient = () => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => setIngredient(e.target.value.trim());
   const handleEnteredIngredient = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (ingredient.length === 0) {
+      alert('재료를 등록해주세요!');
+      return;
+    }
     dispatch(addList(ingredient));
     setIngredient('');
   };
