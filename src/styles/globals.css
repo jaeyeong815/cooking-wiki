@@ -16,6 +16,6 @@
     @apply w-40 py-2 rounded-md text-gray bg-lightRed/10 hover:underline hover:cursor-pointer decoration-wavy text-center;
   }
   .item-ingredient-btn {
-    @apply rounded bg-lightOrange py-2 px-3 ml-1 text-white text-sm hover:text-black;
+    @apply rounded bg-lightOrange py-2 px-3 ml-1 text-white text-sm hover:bg-lightRed;
   }
 }
