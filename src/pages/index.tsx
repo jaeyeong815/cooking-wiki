@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import MyRefrigerator from '@/components/MyRefrigerator';
 
 const Home = () => {
   return (
@@ -6,6 +7,7 @@ const Home = () => {
       <Head>
         <title>Home</title>
       </Head>
+      <MyRefrigerator />
     </>
   );
 };
