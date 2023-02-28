@@ -14,7 +14,7 @@ const SelectIngredientList = () => {
       {selectList.length > 0 && (
         <div className="pt-14 px-24 shadow-xl flex flex-col items-center rounded-md bg-yellow/10">
           <p className="font-bold text-xl">선택된 재료</p>
-          <ul className="my-6">
+          <ul className="my-6 overflow-y-auto h-60 px-10">
             {selectList.map((ingredient) => (
               <li className="mb-3 flex items-center" key={ingredient}>
                 <span className="inline-block item-ingredient font-bold">{ingredient}</span>

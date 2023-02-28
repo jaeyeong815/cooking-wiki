@@ -13,7 +13,7 @@ const IngredientList = () => {
 
   return (
     <>
-      <ul className="my-20">
+      <ul className="my-20 overflow-y-auto h-96 px-10">
         {ingredientList.length === 0 && (
           <div className="flex items-center">
             <span className="text-xl">재료가 텅 비어있어요</span>
