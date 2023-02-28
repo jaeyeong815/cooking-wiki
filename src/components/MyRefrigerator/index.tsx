@@ -2,7 +2,6 @@ import AddIngredient from '@/components/MyRefrigerator/Ingredient/AddIngredient'
 import IngredientList from '@/components/MyRefrigerator/Ingredient/IngredientList';
 import SelectedIngredientList from '@/components/MyRefrigerator/SelectedIngredient/SelectedList';
 import SearchRecipe from '@/components/MyRefrigerator/SelectedIngredient/SearchRecipe';
-import AnswerToQuestion from '@/components/AnswerToQuestion';
 
 const MyRefrigerator = () => {
   return (
@@ -12,8 +11,6 @@ const MyRefrigerator = () => {
       <IngredientList />
       <SelectedIngredientList />
       <SearchRecipe />
-      {/* 상태 저장하는 기능 구현하면 답변 컴포넌트는 (다른 페이지로) 없어질 예정 */}
-      <AnswerToQuestion />
     </div>
   );
 };
