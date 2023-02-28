@@ -18,7 +18,7 @@ export const checkApiKey = (configuration: Configuration, res: NextApiResponse) 
   }
 };
 
-export const hasValues = (values, res: NextApiResponse) => {
+export const hasValues = (values: string, res: NextApiResponse) => {
   if (values.length === 0) {
     res.status(400).json({
       error: {
