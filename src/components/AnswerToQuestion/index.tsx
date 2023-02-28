@@ -23,17 +23,20 @@ const AnswerToQuestion = () => {
   };
 
   return (
-    <>
+    <div className="flex flex-col items-center">
+      <h1 className="py-4 text-2xl font-bold text-gray">마이 냉장고</h1>
       {recommandedFoodList.map((food) => (
         <div key={food}>
-          <button id={food} onClick={handleSelectFood}>
+          <button className="item-ingredient-btn mb-4" id={food} onClick={handleSelectFood}>
             {food}
           </button>
         </div>
       ))}
-      {recipe?.map((el) => el + '\n')}
-      <button onClick={handleSearchRecipe}>검색</button>
-    </>
+      <button onClick={handleSearchRecipe}>선택한 요리 레시피 검색하기</button>
+      {recipe?.map((el, idx) => (
+        <p key={idx}>{el + '\n'}</p>
+      ))}
+    </div>
   );
 };
 
