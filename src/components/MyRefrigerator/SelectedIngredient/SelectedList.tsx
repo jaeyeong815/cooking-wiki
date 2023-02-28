@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import { deleteSelectListInItem } from '@/store/slice/ingredientListSlice';
+import SearchFoodList from '@/components/MyRefrigerator/SelectedIngredient/SearchFoodList';
 
 const SelectIngredientList = () => {
   const selectList = useSelector((state: RootState) => state.ingredientList.selectList);
@@ -11,20 +12,20 @@ const SelectIngredientList = () => {
   return (
     <>
       {selectList.length > 0 && (
-        <>
-          <hr className="border w-5/6 border-dashed " />
-          <p className="mt-20 font-bold text-xl">선택된 재료</p>
+        <div className="pt-14 px-24 shadow-xl flex flex-col items-center rounded-md bg-yellow/10">
+          <p className="font-bold text-xl">선택된 재료</p>
           <ul className="my-6">
             {selectList.map((ingredient) => (
               <li className="mb-3 flex items-center" key={ingredient}>
-                <span className="inline-block item-ingredient">{ingredient}</span>
+                <span className="inline-block item-ingredient font-bold">{ingredient}</span>
                 <button className="btn-option-del" id={ingredient} onClick={handleDelete}>
                   삭제
                 </button>
               </li>
             ))}
           </ul>
-        </>
+          <SearchFoodList />
+        </div>
       )}
     </>
   );
