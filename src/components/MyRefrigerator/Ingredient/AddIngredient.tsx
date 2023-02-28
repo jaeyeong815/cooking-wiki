@@ -22,7 +22,7 @@ const AddIngredient = () => {
         value={ingredient}
         onChange={handleOnChange}
       />
-      <button className="btn-primary" type="submit">
+      <button className="btn-primary ml-5" type="submit">
         등록
       </button>
     </form>

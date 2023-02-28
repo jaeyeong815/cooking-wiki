@@ -12,6 +12,12 @@ const IngredientList = () => {
 
   return (
     <ul className="my-20">
+      {ingredientList.length === 0 && (
+        <div className="flex items-center">
+          <span className="text-xl">재료가 텅 비어있어요</span>
+          <img src="/sad.svg" className="w-12 h-12 inline-block" />
+        </div>
+      )}
       {ingredientList.map((ingredient) => (
         <li className="mb-3 flex items-center" key={ingredient}>
           <span id={ingredient} onClick={handleSelect} className="item-ingredient">

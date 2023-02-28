@@ -24,9 +24,15 @@ const SearchRecipe = () => {
   };
 
   return (
-    <button className="mt-14 btn-primary" onClick={handleSearch}>
-      위 재료로 만들 수 있는 요리 검색하기
-    </button>
+    <>
+      {selectList.length > 0 && (
+        <>
+          <button className="btn-primary mt-14" onClick={handleSearch}>
+            위 재료로 만들 수 있는 요리 검색하기
+          </button>
+        </>
+      )}
+    </>
   );
 };
 
