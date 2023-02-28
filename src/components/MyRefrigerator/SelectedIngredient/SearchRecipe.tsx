@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 import { foodRecommend } from '@/pages/api';
 import type { RootState } from '@/store';
 import { addRecommendedFoodToList } from '@/store/slice/recommendSlice';
-import { useRouter } from 'next/router';
+import SearchButton from '@/components/UI/SearchButton';
 
 const SearchRecipe = () => {
   const selectList = useSelector((state: RootState) => state.ingredientList.selectList);
@@ -11,8 +12,6 @@ const SearchRecipe = () => {
 
   const handleSearch = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-
-    if (selectList.length === 0) alert('재료를 선택해주세요!');
 
     try {
       const foodList = await foodRecommend(selectList.join(',')).then((res) => res.toString().trim());
@@ -24,15 +23,7 @@ const SearchRecipe = () => {
   };
 
   return (
-    <>
-      {selectList.length > 0 && (
-        <>
-          <button className="btn-primary mt-14" onClick={handleSearch}>
-            위 재료로 만들 수 있는 요리 검색하기
-          </button>
-        </>
-      )}
-    </>
+    <>{selectList.length > 0 && <SearchButton onClick={handleSearch} text="위 재료로 만들 수 있는 요리 검색하기" />}</>
   );
 };
 

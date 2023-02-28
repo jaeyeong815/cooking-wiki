@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import { searchRecipe } from '@/pages/api';
-import { useState } from 'react';
+import SearchButton from '@/components/UI/SearchButton';
 
 const AnswerToQuestion = () => {
   const recommandedFoodList = useSelector((state: RootState) => state.recommendList.recommendedFoodList);
@@ -32,7 +33,7 @@ const AnswerToQuestion = () => {
           </button>
         </div>
       ))}
-      <button onClick={handleSearchRecipe}>선택한 요리 레시피 검색하기</button>
+      <SearchButton onClick={handleSearchRecipe} text="선택한 요리 레시피 검색하기" />
       {recipe?.map((el, idx) => (
         <p key={idx}>{el + '\n'}</p>
       ))}
