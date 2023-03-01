@@ -1,5 +1,6 @@
-import { checkApiKey, configuration, hasValues, openai } from '@/pages/api/instance/openaiInstance';
 import { NextApiRequest, NextApiResponse } from 'next';
+
+import { checkApiKey, configuration, hasValues, openai } from '@/pages/api/instance/openaiInstance';
 
 const foodQuestion = async (req: NextApiRequest, res: NextApiResponse) => {
   checkApiKey(configuration, res);

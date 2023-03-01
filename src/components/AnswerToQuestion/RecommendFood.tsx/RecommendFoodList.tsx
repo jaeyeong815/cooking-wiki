@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import type { RootState } from '@/store';
 import { selectedFood } from '@/store/slice/recommendSlice';
-import { useState } from 'react';
 
 const RecommendFoodList = () => {
   const [select, setSelect] = useState('');

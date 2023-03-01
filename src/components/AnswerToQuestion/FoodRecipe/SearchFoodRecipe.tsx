@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+import SearchButton from '@/components/UI/SearchButton';
 import { searchRecipe } from '@/pages/api';
 import type { RootState } from '@/store';
 import { saveRecipe } from '@/store/slice/recommendSlice';
-import SearchButton from '@/components/UI/SearchButton';
 
 const SearchFoodRecipe = () => {
   const [isLoading, setIsLoading] = useState(false);

@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
+
+import SearchFoodList from '@/components/MyRefrigerator/SelectedIngredient/SearchFoodList';
 import type { RootState } from '@/store';
 import { deleteSelectListInItem } from '@/store/slice/ingredientListSlice';
-import SearchFoodList from '@/components/MyRefrigerator/SelectedIngredient/SearchFoodList';
 
 const SelectIngredientList = () => {
   const selectList = useSelector((state: RootState) => state.ingredientList.selectList);
