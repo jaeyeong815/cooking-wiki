@@ -1,10 +1,11 @@
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useRouter } from 'next/router';
+
+import SearchButton from '@/components/UI/SearchButton';
 import { foodRecommend } from '@/pages/api';
 import type { RootState } from '@/store';
 import { addRecommendedFoodToList } from '@/store/slice/recommendSlice';
-import SearchButton from '@/components/UI/SearchButton';
 
 const SearchFoodList = () => {
   const [isLoading, setIsLoading] = useState(false);
