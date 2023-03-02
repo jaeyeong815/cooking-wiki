@@ -8,9 +8,7 @@ const instance = axios.create({
 instance.interceptors.response.use(
   (res) => res.data.result,
   (err) => {
-    if (err.response.status !== 200) {
-      throw err.response.data.error.message || new Error(`Request failed with status ${err.response.status}`);
-    }
+    throw err.response.data.error.message || new Error(`Request failed with status ${err.response.status}`);
   }
 );
 
