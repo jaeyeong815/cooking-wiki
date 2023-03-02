@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import SearchButton from '@/components/UI/SearchButton';
 import { foodRecommend } from '@/pages/api';
 import type { RootState } from '@/store';
-import { addRecommendedFoodToList } from '@/store/slice/recommendSlice';
+import { addRecommendedFoodToList, saveRecipe } from '@/store/slice/recommendSlice';
 
 const SearchFoodList = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -21,6 +21,7 @@ const SearchFoodList = () => {
       const foodList = await foodRecommend(selectList.join(',')).then((res) => res.toString().trim());
       dispatch(addRecommendedFoodToList(foodList.split('\n').map((food) => food.slice(3))));
       setIsLoading(false);
+      dispatch(saveRecipe([]));
       router.push('/answer');
     } catch (err) {
       console.log(err);
