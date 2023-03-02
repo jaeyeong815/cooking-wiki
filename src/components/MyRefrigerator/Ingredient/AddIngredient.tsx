@@ -19,9 +19,9 @@ const AddIngredient = () => {
   };
 
   return (
-    <form onSubmit={handleEnteredIngredient}>
+    <form className="flex items-center justify-center" onSubmit={handleEnteredIngredient}>
       <input
-        className="w-80 placeholder:italic placeholder:text-slate-400 bg-white rounded py-2 px-9 shadow-md focus:outline-none focus:border-yellow focus:ring-yellow focus:ring-1"
+        className="w-64 placeholder:italic placeholder:text-slate-400 bg-white rounded py-2 px-3 shadow-md focus:outline-none focus:border-yellow focus:ring-yellow focus:ring-1"
         type="text"
         placeholder="냉장고에 있는 재료를 입력해주세요!"
         value={ingredient}

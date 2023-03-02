@@ -6,7 +6,7 @@ interface PropsType {
 
 const SearchButton = (props: PropsType) => {
   return (
-    <button className={`btn-primary my-14 ${props.loading ? 'animate-pulse' : ''}`} onClick={props.onClick}>
+    <button className={`btn-primary m-3 ${props.loading ? 'animate-pulse' : ''}`} onClick={props.onClick}>
       {props.text}
     </button>
   );
