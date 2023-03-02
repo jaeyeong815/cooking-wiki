@@ -4,7 +4,7 @@ import SelectedIngredientList from '@/components/MyRefrigerator/SelectedIngredie
 
 const MyRefrigerator = () => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center justify-center mb-10">
       <AddIngredient />
       <IngredientList />
       <SelectedIngredientList />

@@ -28,11 +28,7 @@ const SearchFoodList = () => {
   };
 
   return (
-    <>
-      {selectList.length > 0 && (
-        <SearchButton loading={isLoading} onClick={handleSearch} text="위 재료로 만들 수 있는 요리 검색하기" />
-      )}
-    </>
+    <>{selectList.length > 0 && <SearchButton loading={isLoading} onClick={handleSearch} text="요리 검색하기" />}</>
   );
 };
 

@@ -14,7 +14,7 @@ const IngredientList = () => {
 
   return (
     <>
-      <ul className="my-20 overflow-y-auto h-96 px-10">
+      <ul className="my-10 overflow-y-auto h-64 px-10">
         {ingredientList.length === 0 && (
           <div className="flex items-center">
             <span className="text-xl">재료가 텅 비어있어요</span>
@@ -33,9 +33,9 @@ const IngredientList = () => {
         ))}
       </ul>
       {ingredientList.length > 0 && selectList.length === 0 && (
-        <div className="text-lg flex items-center">
+        <div>
           <span>재료를 선택해주시면 요리를 추천해드릴게요!</span>
-          <img className="w-12 h-12 inline-block" src="/search.svg" />
+          <img className="w-10 h-10 inline-block" src="/search.svg" />
         </div>
       )}
     </>

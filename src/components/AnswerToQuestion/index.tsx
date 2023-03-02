@@ -4,7 +4,7 @@ import RecommendFoodList from '@/components/AnswerToQuestion/\bRecommendFood.tsx
 
 const AnswerToQuestion = () => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center justify-center mb-10">
       <RecommendFoodList />
       <SearchFoodRecipe />
       <FoodRecipe />

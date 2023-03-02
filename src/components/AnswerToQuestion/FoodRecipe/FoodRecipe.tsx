@@ -10,7 +10,7 @@ const FoodRecipe = () => {
     <>
       {recipe.length > 0 && (
         <>
-          <div className="grid grid-cols-2 mx-10 md:mx-48">
+          <div className="grid grid-cols-2 mx-10 md:mx-48 my-6">
             <div className="justify-self-center">
               <p className="font-extrabold text-center">재료</p>
               {recipe.map((el) =>
