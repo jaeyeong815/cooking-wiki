@@ -6,12 +6,15 @@ import SearchButton from '@/components/UI/SearchButton';
 import { foodRecommend } from '@/pages/api';
 import type { RootState } from '@/store';
 import { addRecommendedFoodToList, saveRecipe } from '@/store/slice/recommendSlice';
+import { hasValue } from '@/utils/hasValue';
 
 const SearchFoodList = () => {
   const [isLoading, setIsLoading] = useState(false);
   const selectList = useSelector((state: RootState) => state.ingredientList.selectList);
   const dispatch = useDispatch();
   const router = useRouter();
+
+  const hasSelectList = hasValue(selectList);
 
   const handleSearch = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
@@ -28,9 +31,7 @@ const SearchFoodList = () => {
     }
   };
 
-  return (
-    <>{selectList.length > 0 && <SearchButton loading={isLoading} onClick={handleSearch} text="요리 검색하기" />}</>
-  );
+  return <>{hasSelectList && <SearchButton loading={isLoading} onClick={handleSearch} text="요리 검색하기" />}</>;
 };
 
 export default SearchFoodList;

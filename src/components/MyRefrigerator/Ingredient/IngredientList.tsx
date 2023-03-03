@@ -2,11 +2,15 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import type { RootState } from '@/store';
 import { deleteListInItem, selectItem } from '@/store/slice/ingredientListSlice';
+import { hasValue } from '@/utils/hasValue';
 
 const IngredientList = () => {
   const ingredientList = useSelector((state: RootState) => state.ingredientList.ingredientList);
   const selectList = useSelector((state: RootState) => state.ingredientList.selectList);
   const dispatch = useDispatch();
+
+  const hasIngredientList = hasValue(ingredientList);
+  const hasSelectList = hasValue(selectList);
 
   const handleSelect = (e: React.MouseEvent<HTMLElement>) => dispatch(selectItem(e.currentTarget.id));
 
@@ -15,7 +19,7 @@ const IngredientList = () => {
   return (
     <>
       <ul className="my-10 overflow-y-auto h-64 px-10">
-        {ingredientList.length === 0 && (
+        {!hasIngredientList && (
           <div className="flex items-center">
             <span className="text-xl">재료가 텅 비어있어요</span>
             <img src="/sad.svg" className="w-12 h-12 inline-block" />
@@ -32,7 +36,7 @@ const IngredientList = () => {
           </li>
         ))}
       </ul>
-      {ingredientList.length > 0 && selectList.length === 0 && (
+      {hasIngredientList && !hasSelectList && (
         <div>
           <span>재료를 선택해주시면 요리를 추천해드릴게요!</span>
           <img className="w-10 h-10 inline-block" src="/search.svg" />

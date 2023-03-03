@@ -2,13 +2,15 @@ import Link from 'next/link';
 import { useSelector } from 'react-redux';
 
 import { RootState } from '@/store';
+import { hasValue } from '@/utils/hasValue';
 
 const FoodRecipe = () => {
   const recipe = useSelector((state: RootState) => state.recommendList.foodRecipe);
+  const hasRecipe = hasValue(recipe);
 
   return (
     <>
-      {recipe.length > 0 && (
+      {hasRecipe && (
         <>
           <div className="grid grid-cols-2 mx-10 md:mx-48 my-6">
             <div className="justify-self-center">
