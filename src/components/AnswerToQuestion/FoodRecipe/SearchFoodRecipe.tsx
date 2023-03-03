@@ -15,8 +15,6 @@ const SearchFoodRecipe = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    if (selectedFood.length === 0) alert('재료를 선택해주세요!');
-
     try {
       const recipe = await searchRecipe(selectedFood).then((res) => res.toString());
       dispatch(saveRecipe(recipe.split('\n').filter((el) => el.length)));
