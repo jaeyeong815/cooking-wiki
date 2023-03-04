@@ -8,7 +8,7 @@ const nextConfig = {
   assetPrefix: !debug ? `/${repository}/` : '',
   trailingSlash: true,
   env: {
-    API_KEY: process.env.OPENAI_API_KEY,
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
   },
 };
 
