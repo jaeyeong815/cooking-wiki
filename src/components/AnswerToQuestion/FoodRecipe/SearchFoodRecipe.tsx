@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import SearchButton from '@/components/UI/SearchButton';
-import { searchRecipe } from '@/pages/api';
+import { questionGPT } from '@/pages/api';
 import type { RootState } from '@/store';
 import { saveRecipe } from '@/store/slice/recommendSlice';
 
@@ -16,8 +16,8 @@ const SearchFoodRecipe = () => {
     setIsLoading(true);
 
     try {
-      const recipe = await searchRecipe(selectedFood).then((res) => res.toString());
-      dispatch(saveRecipe(recipe.split('\n').filter((el) => el.length)));
+      const recipe = await questionGPT(`${selectedFood} 레시피 알려줘`).then((res) => res.toString());
+      dispatch(saveRecipe(recipe.split('\n').filter((el: string | unknown[]) => el.length)));
       setIsLoading(false);
     } catch (err) {
       console.log(err);
