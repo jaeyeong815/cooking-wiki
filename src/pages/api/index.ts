@@ -1,8 +1,5 @@
 import axios from 'axios';
 
-const apiKey =
-  process.env.NODE_ENV === 'production' ? process.env.OPENAI_API_KEY : process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-
 export const questionGPT = (question: string) =>
   axios
     .post(
@@ -14,7 +11,7 @@ export const questionGPT = (question: string) =>
       },
       {
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
           'Content-Type': 'application/json',
         },
       }
