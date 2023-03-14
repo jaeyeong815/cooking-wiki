@@ -7,9 +7,6 @@ const nextConfig = {
   reactStrictMode: false,
   assetPrefix: !debug ? `/${repository}/` : '',
   trailingSlash: true,
-  env: {
-    API_KEY: process.env.OPENAI_API_KEY,
-  },
 };
 
 module.exports = nextConfig;
