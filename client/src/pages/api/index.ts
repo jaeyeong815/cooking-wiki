@@ -3,21 +3,18 @@ import axios from 'axios';
 export const questionGPT = (question: string) =>
   axios
     .post(
-      'https://api.openai.com/v1/engines/text-davinci-003/completions',
+      'http://localhost:3000/api/request',
       {
-        prompt: question,
-        temperature: 0.4,
-        max_tokens: 1888,
+        question,
       },
       {
         headers: {
-          Authorization: `Bearer ${process.env.API_KEY}`,
           'Content-Type': 'application/json',
         },
       }
     )
     .then((response) => {
-      return response.data.choices[0].text;
+      return response.data;
     })
     .catch((error) => {
       console.log(error);
