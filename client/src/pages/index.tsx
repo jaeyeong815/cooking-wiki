@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>Cooking-Wiki</title>
       </Head>
       <MyRefrigerator />
     </>

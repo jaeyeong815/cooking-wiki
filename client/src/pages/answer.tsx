@@ -6,7 +6,7 @@ const Refrigerator = () => {
   return (
     <>
       <Head>
-        <title>마이 냉장고</title>
+        <title>Answer from GPT [Cooking-Wiki]</title>
       </Head>
       <AnswerToQuestion />
     </>
