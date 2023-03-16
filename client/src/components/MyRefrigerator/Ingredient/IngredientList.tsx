@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import { deleteListInItem, selectItem } from '@/store/slice/ingredientListSlice';
 import { hasValue } from '@/utils/hasValue';
-import { prefix } from '@/utils/prefix';
 
 const IngredientList = () => {
   const ingredientList = useSelector((state: RootState) => state.ingredientList.ingredientList);
@@ -23,7 +22,7 @@ const IngredientList = () => {
         {!hasIngredientList && (
           <div className="flex items-center">
             <span className="text-xl">재료가 텅 비어있어요</span>
-            <img src={`${prefix}/sad.svg`} className="w-12 h-12 inline-block" />
+            <img src="/sad.svg" className="w-12 h-12 inline-block" />
           </div>
         )}
         {ingredientList.map((ingredient) => (
@@ -40,7 +39,7 @@ const IngredientList = () => {
       {hasIngredientList && !hasSelectList && (
         <div>
           <span>재료를 선택해주시면 요리를 추천해드릴게요!</span>
-          <img className="w-10 h-10 inline-block" src={`${prefix}/search.svg`} />
+          <img className="w-10 h-10 inline-block" src="/search.svg" />
         </div>
       )}
     </>

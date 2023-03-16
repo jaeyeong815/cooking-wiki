@@ -2,7 +2,6 @@
   "name": "cooking-wiki",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Storage-with-chatGPT.github.io/cooking-wiki",
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",

@@ -3,7 +3,7 @@ import axios from 'axios';
 export const questionGPT = (question: string) =>
   axios
     .post(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/request`,
+      'http://15.164.47.225/api/request',
       {
         question,
       },
