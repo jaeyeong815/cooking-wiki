@@ -1,9 +1,13 @@
 import axios from 'axios';
 
+const api = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_SERVER_URL,
+});
+
 export const questionGPT = (question: string) =>
-  axios
+  api
     .post(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/request`,
+      '/api/request',
       {
         question,
       },
