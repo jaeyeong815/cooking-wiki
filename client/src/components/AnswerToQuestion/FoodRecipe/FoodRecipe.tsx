@@ -15,14 +15,26 @@ const FoodRecipe = () => {
           <div className="grid grid-cols-2 mx-10 md:mx-48 my-6">
             <div className="justify-self-center">
               <p className="font-extrabold text-center">재료</p>
-              {recipe.map((el) =>
-                el.includes('-') ? (
-                  <div key={el}>
-                    <br />
-                    <p>{el.replace('-', '☑︎') + '\n'}</p>
-                  </div>
-                ) : null
-              )}
+              {recipe.map((el) => {
+                if (el === '양념재료') {
+                  return (
+                    <div key={el}>
+                      <br />
+                      <p style={{ textAlign: 'center' }}>
+                        <strong>양념재료</strong>
+                      </p>
+                    </div>
+                  );
+                }
+                if (el.includes('-')) {
+                  return (
+                    <div key={el}>
+                      <br />
+                      <p>{el.replace('-', '☑︎') + '\n'}</p>
+                    </div>
+                  );
+                }
+              })}
             </div>
             <div className="justify-self-center">
               <p className="font-extrabold text-center">레시피</p>
